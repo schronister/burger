@@ -1,0 +1,56 @@
+<div class="container">
+
+<h1 id="header">THE BURGER STAND!</h1>
+<img id="headerImage" src="http://pngimg.com/upload/burger_sandwich_PNG4145.png">
+<br>
+<div id="toEat">
+	<h3>Burgers to Eat</h3>
+	{{#each burgers}}
+		{{#unless this.devoured}}
+		<form action="/burgers/{{this.id}}?_method=PUT" method="POST">
+			<p class="uneaten" id="{{this.id}}">
+				{{this.burger_name}}
+						
+				
+					<input type="hidden" name="devoured" value="true">
+					<button type="submit">DEVOUR THIS BURGER</button>
+					</p>
+				</form>
+
+		{{/unless}}
+	{{/each}}
+</div>
+
+
+<div id="ate">
+	<h3>Burgers You Ate</h3>
+	{{#each burgers}}
+		{{#if this.devoured}}
+		<p class="eaten">
+			{{this.burger_name}}
+		</p>	
+				
+		{{/if}}
+	{{/each}}
+
+</div>
+
+
+
+<div id="add">
+	<br>
+	<hr>
+	<h2>Add a Burger</h2>
+	<form class="create-update-form" action="burgers/create" method="POST">
+
+	  <div class="form-group">
+	    <label for="ca">Burger:</label>
+	    <input type="text" id="ca" name="burger_name">
+	  </div>
+
+	  <button type="submit">Add Burger</button>
+	</form>
+
+</div>
+	
+</div>

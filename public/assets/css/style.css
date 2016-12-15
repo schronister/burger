@@ -1,0 +1,35 @@
+#toEat{
+	float:left;
+	width:50%;
+	text-align:center;
+}
+
+#ate{
+	float:left;
+	width:50%;
+	text-align:center;
+}
+
+#add{
+	text-align:center;
+	clear:both;
+
+}
+
+.container{
+	margin:0px 8%;
+}
+
+#header{
+	text-align:center;
+}
+
+#headerImage{
+	display:block;
+	margin:0px auto;
+	width:200px;
+}
+
+body{
+	background-color:#2299DD;
+}
